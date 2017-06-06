@@ -6,14 +6,17 @@ const options = {
   username: 'admin',
   password: '880711'
 }
-  // smartplug.getDeviceInfo(options).then(function (info) {
-  //   console.log(info)
-  // }).catch(function (e) {
-  //   console.log('Request failed: ', e)
-  // })
+// smartplug.getDeviceInfo(options).then(function (info) {
+//   console.log(info)
+// }).catch(function (e) {
+//   console.log('Request failed: ', e)
+// })
 
 module.exports = {
   switchLamp (status = false) {
     return smartplug.setSwitchState(status, options)
+  },
+  getState () {
+    return smartplug.getSwitchState(options)
   }
 }
