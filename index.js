@@ -13,6 +13,14 @@ app.get('/home/switch', function (req, res) {
   })
 })
 
+app.get('/home/update', function (req, res) {
+  ediplug.updateDevice().then(device => {
+    res.send(device)
+  }).catch(err => {
+    res.send(err)
+  })
+})
+
 app.listen(3000, function () {
   console.log('Example app listening on port 3000!')
 })
